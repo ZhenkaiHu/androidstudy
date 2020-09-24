@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.hz.helloworld.listview.ListViewActivity;
+import com.hz.helloworld.recycleview.RecycleViewActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -18,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
     private Button mBtnCheckbox;
     private Button mBtnImageView;
     private Button mBtnListView;
+    private Button mBtnRecycleView;
 
 
     @Override
@@ -31,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
         mBtnCheckbox = findViewById(R.id.btn_check_box);
         mBtnImageView = findViewById(R.id.btn_image_view);
         mBtnListView = findViewById(R.id.btn_listview);
+        mBtnRecycleView = findViewById(R.id.btn_recycleview);
         SetListeners();
     }
 
@@ -43,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
         mBtnCheckbox.setOnClickListener(onClick);
         mBtnImageView.setOnClickListener(onClick);
         mBtnListView.setOnClickListener(onClick);
+        mBtnRecycleView.setOnClickListener(onClick);
     }
 
     private class OnClick implements View.OnClickListener{
@@ -71,6 +75,9 @@ public class MainActivity extends AppCompatActivity {
                     break;
                 case R.id.btn_listview:
                     intent = new Intent(MainActivity.this, ListViewActivity.class);
+                    break;
+                case R.id.btn_recycleview:
+                    intent = new Intent(MainActivity.this, RecycleViewActivity.class);
                     break;
                 default:
                     throw new IllegalStateException("Unexpected value: " + v.getId());
